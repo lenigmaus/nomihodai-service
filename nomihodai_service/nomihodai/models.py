@@ -27,3 +27,9 @@ class Food(models.Model):
 	area2_name = models.CharField(max_length=200)
 
 	recommended_months = models.CommaSeparatedIntegerField(max_length=100, null=True, blank=True)
+
+	def __str__(self):
+		return self.name
+
+	def __unicode__(self):
+		return self.name

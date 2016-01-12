@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'django_filters',
+    'crispy_forms',
     'nomihodai',
     'rest_framework',
     'compressor',
@@ -135,3 +137,7 @@ STATICFILES_FINDERS = (
 )
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+}
