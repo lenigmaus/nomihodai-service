@@ -1,0 +1,67 @@
+hokkaido:
+  - iwamisawa
+  - wakkanai
+  - chitose
+  - asahikawa
+  - shiretoko
+  - otaru
+  - kushiro
+  - toyako
+  - tokachi
+  - hakodate
+touhoku:
+  - aomori
+  - akita
+  - yamagata
+  - iwate
+  - miyagi
+  - fukushima
+kantou:
+  - gunma
+  - saitama
+  - kanagawa
+  - tochigi
+  - ibaraki
+  - chiba
+izuhakone:
+  - hakone
+  - izu
+koushinetsu:
+  - nagano
+  - yamanashi
+  - niigata
+tokai_hokuriku:
+  - ishikawa
+  - fukui
+  - mie
+  - shizuoka
+  - toyama
+  - gifu
+  - aichi
+kinki:
+  - kyoto
+  - hyogo
+  - wakayama
+  - shiga
+  - osaka
+  - nara
+chugoku:
+  - shimane
+  - okayama
+  - hiroshima
+  - tottori
+  - yamaguchi
+shikoku:
+  - ehime
+  - kagawa
+  - kouchi
+  - tokushima
+kyusyu_okinawa:
+  - saga
+  - fukuoka
+  - nagasaki
+  - oita
+  - kumamoto
+  - miyazaki
+  - kagoshima
+  - okinawa
