@@ -9,7 +9,11 @@ If you have virtualenv then proceed as follows:
 1. Create a new virtual environment: ```virtualenv venv```
 2. Install requirements
   * ```. venv/bin/activate```
-  * ``` pip install -r requirements.txt```
+  * ```pip install -r requirements.txt```
+  * ```cd nomihodai_service```
+  * ```npm install -g bower```
+  * ```npm install```
+  * ```bower install```
 
 ## How to start the service
 
