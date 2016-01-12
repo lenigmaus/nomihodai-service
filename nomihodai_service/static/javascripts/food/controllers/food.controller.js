@@ -9,12 +9,12 @@
     .module('nomihodai.food.controllers')
     .controller('FoodController', FoodController);
 
-  FoodController.$inject = ['$scope'];
+  FoodController.$inject = ['$scope', '$window'];
 
   /**
   * @namespace FoodController
   */
-  function FoodController($scope) {
+  function FoodController($scope, $window) {
     var vm = this;
 
     vm.columns = [];
@@ -29,6 +29,28 @@
     */
     function activate() {
       $scope.$watchCollection(function () { return $scope.foodlist; }, render);
+    }
+
+
+     /**
+    * @name calculateNumberOfColumns
+    * @desc Calculate number of columns based on screen width
+    * @returns {Number} The number of columns containing Trips
+    * @memberOf trekhunt.trips.controllers.TripsControllers
+    */
+    function calculateNumberOfColumns() {
+      var width = $window.innerWidth;
+
+      if (width >= 1200) {
+        return 6;
+      } else if (width >= 992) {
+        return 4;
+      } else if (width >= 768) {
+        return 2;
+      } else {
+        return 1;
+      }
+      return 4;
     }
 
 
@@ -51,7 +73,7 @@
       */
       function columnMapFn(column) {
         var lengths = column.map(function (element) {
-          return element.description.length;
+          return element.long_desc.length;
         });
 
         return lengths.reduce(sum, 0) * column.length;
@@ -82,7 +104,7 @@
       if (current !== original) {
         vm.columns = [];
 
-        for (var i = 0; i < 5; ++i) {
+        for (var i = 0; i < calculateNumberOfColumns(); ++i) {
           vm.columns.push([]);
         }
 
