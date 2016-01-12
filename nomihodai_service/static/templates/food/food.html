@@ -2,16 +2,16 @@
     <img ng-src="{{ food.image_src }}" class="md-card-image" alt="Food Image">
     <md-card-title>
         <md-card-title-text>
-            <span>{{ food.title }}</span>
-            <span>{{ food.area1_name }} , {{ food.area2_name }}</span>
+            <span class="md-title">{{ food.name }}</span>
+            <span class="md-subhead">{{ food.short_desc }}</span>
+            <span class="md-subhead">{{ food.area1_name }} , {{ food.area2_name }}</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
         <div layout="row" layout-wrap layout-align="start start">
-            <span>{{ food.season }}</span>
-            <span>{{ food.recommended_months }}</span>
+            <span class="md-body-2">{{ food.season }}</span>
+            <span class="md-body-2">{{ food.recommended_months }}</span>
         </div>
-        <span>{{ food.short_desc }}</span>
-        <span>{{ food.long_desc }}</span>
+        <span class="md-body-1">{{ food.long_desc }}</span>
     </md-card-content>
 </md-card>

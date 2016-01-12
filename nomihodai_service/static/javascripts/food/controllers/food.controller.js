@@ -82,7 +82,7 @@
       if (current !== original) {
         vm.columns = [];
 
-        for (var i = 0; i < 4; ++i) {
+        for (var i = 0; i < 5; ++i) {
           vm.columns.push([]);
         }
 
