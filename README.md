@@ -19,3 +19,14 @@ If you have virtualenv then proceed as follows:
   * ```cd nomihodai_service```
   * ```python manage.py runserver```
 
+## How to browse the API
+
+1. Start the service
+2. Visit ```localhost:8000/api/v1/nomihodai```
+
+## How to add more Food
+
+1. Start the service
+2. Visit ```localhost:8000/admin```
+3. Log in with *admin/nomihodai123*
+4. Click on **Foods** and **Add Food**
