@@ -1,0 +1,23 @@
+{% load compress %}
+{% load staticfiles %}
+
+{% compress js %}
+
+<script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-animate/angular-animate.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-aria/angular-aria.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-material/angular-material.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/nomihodai.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/nomihodai.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/nomihodai.routes.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/food/food.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/food/services/food.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/food/controllers/food.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/food/directives/food.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/food/directives/foodlist.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/index.controller.js' %}"></script>
+
+{% endcompress %}

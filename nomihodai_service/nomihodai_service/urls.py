@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from nomihodai import views
 from rest_framework.routers import DefaultRouter
+from nomihodai_service.views import IndexView
 
 router = DefaultRouter()
 router.register(r'nomihodai', views.FoodViewSet)
@@ -24,4 +25,5 @@ router.register(r'nomihodai', views.FoodViewSet)
 urlpatterns = [
 	url(r'^api/v1/', include(router.urls)),
     url(r'^admin/', admin.site.urls),
+    url('^.*$', IndexView.as_view(), name='index'),
 ]

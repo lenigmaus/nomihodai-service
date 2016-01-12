@@ -1,0 +1,8 @@
+{% load compress %}
+{% load staticfiles %}
+
+{% compress css %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-material/angular-material.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/styles.css' %}" />
+{% endcompress %}
