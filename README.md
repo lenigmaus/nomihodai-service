@@ -22,6 +22,7 @@ If you have virtualenv then proceed as follows:
 2. Start the server:
   * ```cd nomihodai_service```
   * ```python manage.py runserver```
+3. Visit ```localhost:8000/```
 
 ## How to browse the API
 
