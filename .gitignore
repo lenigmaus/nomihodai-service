@@ -1,2 +1,3 @@
 *.pyc
 /venv
+/nomihodai_service/static/bower_components
