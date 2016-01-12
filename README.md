@@ -11,7 +11,7 @@ If you have virtualenv then proceed as follows:
   * ```. venv/bin/activate```
   * ``` pip install -r requirements.txt```
 
-## How to run start the service
+## How to start the service
 
 1. Load your virtual environment if you haven't done it yet:
 ```. venv/bin/activate```
