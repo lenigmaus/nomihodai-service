@@ -3,6 +3,7 @@ angular
   	'nomihodai.config',
   	'nomihodai.routes',
   	'nomihodai.food',
+  	'nomihodai.location',
   	'nomihodai.layout'
 ]);
 

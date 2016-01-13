@@ -1,5 +1,6 @@
-<md-toolbar>
+<md-toolbar ng-controller="NavbarController as vm">
     <div hide-xs hide-sm class="md-toolbar-tools">
+        <locations flex="30" locations="vm.locations" ng-show="vm.locations && vm.locations.length"></locations>
         <span flex></span>
         <h3 class="md-title">nomihodai | the food service</h3>
     </div>

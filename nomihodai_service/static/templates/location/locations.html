@@ -1,0 +1,15 @@
+<md-autocomplete 
+	ng-disabled="vm.isDisabled" 
+	md-no-cache="vm.noCache" 
+	md-selected-item="vm.selectedLocation"
+	md-search-text="vm.searchText" 
+	md-selected-item-change="vm.selectedLocationChange(location.id)" 
+	md-items="location in vm.locations | filter:vm.searchText" 
+	md-item-text="location.name" 
+	md-min-length="0"
+	md-select-on-match="true"
+	placeholder="Where would you like to travel / eat?">
+    <md-item-template>
+        <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{location.name}}</span>
+    </md-item-template>
+</md-autocomplete>
