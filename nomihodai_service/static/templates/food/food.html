@@ -4,13 +4,24 @@
         <md-card-title-text>
             <span class="md-title">{{ food.name }}</span>
             <span class="md-subhead">{{ food.short_desc }}</span>
-            <span class="md-subhead">{{ food.area1_name }}, {{ food.area2_name }}</span>
+            <div layout="row" layout-wrap layout-align="start start">
+                <md-button class="md-primary">
+                    <span class="md-subhead">{{ food.area1_name }}</span>
+                </md-button>
+                <md-button class="md-primary">
+                    <span class="md-subhead">{{ food.area2_name }}</span>
+                </md-button>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
-        <div layout="row" layout-wrap layout-align="start start">
-            <span class="md-body-2">{{ food.season }}</span>
-            <span class="md-body-2">{{ food.recommended_months }}</span>
+        <div layout-align="start start">
+            <md-button class="md-raised md-primary">
+                <span class="md-body-2">{{ food.season }}</span>
+            </md-button>
+            <br>
+            <md-button class="md-fab md-mini" ng-repeat="month in months">
+                <span class="md-body-2">{{ month }}</span>
+            </md-button>
         </div>
         <span class="md-body-1">{{ food.long_desc }}</span>
     </md-card-content>
