@@ -9,12 +9,12 @@
     .module('nomihodai.layout.controllers')
     .controller('IndexController', IndexController);
 
-  IndexController.$inject = ['$scope', 'Food'];
+  IndexController.$inject = ['$scope', 'Food', '$rootScope'];
 
   /**
   * @namespace IndexController
   */
-  function IndexController($scope, Food) {
+  function IndexController($scope, Food, $rootScope) {
     var vm = this;
 
     vm.foodlist = [];
@@ -27,15 +27,17 @@
     * @memberOf nomihodai.layout.controllers.IndexController
     */
     function activate() {
-      Food.all().then(foodlistSuccessFn, foodlistErrorFn);
-
+      //Food.all().then(foodlistSuccessFn, foodlistErrorFn);
+      Food.search().then(foodlistSuccessFn, foodlistErrorFn);
+      $scope.$watch(function () { return $rootScope.location; }, locationChanged);
+      
       /**
       * @name foodlistSuccessFn
       * @desc Update foodlist array on view
       */
       function foodlistSuccessFn(data, status, headers, config) {
         vm.foodlist = data.data;
-        console.log(vm.foodlist)
+        //console.log(vm.foodlist)
       }
 
 
@@ -46,6 +48,11 @@
       function foodlistErrorFn(data, status, headers, config) {
         //TODO
       }
+
+      function locationChanged(current, old) {
+        Food.search(current).then(foodlistSuccessFn, foodlistErrorFn);
+      }
+      
     }
   }
 })();
