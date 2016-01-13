@@ -45,7 +45,7 @@
     * @memberOf nomihodai.food.services.Food
     */
     function search(area1_name, area2_name, season, month) {
-      return $http.get('/api/v1/nomihodai/?search=' + area1_name + ',' + area2_name + ',' + season + ',' + month);
+      return $http.get('/api/v1/nomihodai/?search=' + area1_name + ',' + area2_name + ',' + season + ',([^0-9]|^)' + month + '([^0-9]|$)');
     }
 
   }
