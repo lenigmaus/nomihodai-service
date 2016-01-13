@@ -22,7 +22,10 @@
       controller: ['$scope', '$rootScope', function($scope, $rootScope) {
         $scope.monthSelected = function (month) {
           $rootScope.month = month;
-          console.log($rootScope)
+        }
+
+        $scope.seasonSelected = function (season) {
+          $rootScope.season = season;
         }
       }],
       restrict: 'E',

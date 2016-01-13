@@ -30,6 +30,7 @@
       Food.search().then(foodlistSuccessFn, foodlistErrorFn);
       $scope.$watch(function () { return $rootScope.location; }, locationChanged);
       $scope.$watch(function () { return $rootScope.month; }, monthChanged);
+      $scope.$watch(function () { return $rootScope.season; }, seasonChanged);
       
       /**
       * @name foodlistSuccessFn
@@ -50,10 +51,15 @@
       }
 
       function locationChanged(current, old) {
-        Food.search(current, "", $rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
+        Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
       }
+      
       function monthChanged(current, old) {
-        Food.search($rootScope.location,"",current).then(foodlistSuccessFn, foodlistErrorFn);
+        Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
+      }
+
+      function seasonChanged(current, old) {
+        Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
       }
       
     }
