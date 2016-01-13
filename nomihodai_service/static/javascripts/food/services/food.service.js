@@ -47,7 +47,7 @@
     function search(area_name, season, month) {
       area_name = typeof area_name !== 'undefined' ? area_name  : '';
       season = typeof season !== 'undefined' ? season  : '';
-      month = typeof month !== 'undefined' ? '([^0-9]|^)' + month + '([^0-9]|$)'  : '';
+      month = ((typeof month !== 'undefined') && (month != '')) ? '([^0-9]|^)' + month + '([^0-9]|$)'  : '';
       return $http.get('/api/v1/nomihodai/?search=' + area_name + ',' + season + ',' + month);
     }
 

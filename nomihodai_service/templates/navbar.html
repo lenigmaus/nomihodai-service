@@ -1,47 +1,31 @@
 <md-toolbar ng-controller="NavbarController as vm">
     <div hide-xs hide-sm class="md-toolbar-tools">
         <locations flex="30" locations="vm.locations" ng-show="vm.locations && vm.locations.length"></locations>
+        <span flex="5"></span>
+        <md-select ng-model="vm.season" ng-change="vm.seasonSelected()" placeholder="季節">
+          <md-option value="">季節</md-option>
+            <md-option value="SP">春</md-option>
+            <md-option value="SU">夏</md-option>
+            <md-option value="FA">秋</md-option>
+            <md-option value="WI">冬</md-option>
+        </md-select>
+        <span flex="5"></span>
+        <md-select ng-model="vm.month" ng-change="vm.monthSelected()" placeholder="月">
+          <md-option value="">月</md-option>
+            <md-option value="1">1月</md-option>
+            <md-option value="2">2月</md-option>
+            <md-option value="3">3月</md-option>
+            <md-option value="4">4月</md-option>
+            <md-option value="5">5月</md-option>
+            <md-option value="6">6月</md-option>
+            <md-option value="7">7月</md-option>
+            <md-option value="8">8月</md-option>
+            <md-option value="9">9月</md-option>
+            <md-option value="10">10月</md-option>
+            <md-option value="11">11月</md-option>
+            <md-option value="12">12月</md-option>
+        </md-select>
         <span flex></span>
         <h3 class="md-title">nomihodai | the food service</h3>
     </div>
-    <div align="right">
-        <select id="season" name="season" onChange="updateUrl()">
-            <option value="">季節</option>
-            <option value="SP">春</option>
-            <option value="SU">夏</option>
-            <option value="FA">秋</option>
-            <option value="WI">冬</option>
-          </select>
-        <select id="month" name="month" onChange="updateUrl()">
-            <option value="">月</option>
-            <option value="1">1月</option>
-            <option value="2">2月</option>
-            <option value="3">3月</option>
-            <option value="4">4月</option>
-            <option value="5">5月</option>
-            <option value="6">6月</option>
-            <option value="7">7月</option>
-            <option value="8">8月</option>
-            <option value="9">9月</option>
-            <option value="10">10月</option>
-            <option value="11">11月</option>
-            <option value="12">12月</option>
-        </select>
-    </div>
 </md-toolbar>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script type="text/javascript">
-function updateUrl(){
-    season = document.getElementById('season').value;
-    month = document.getElementById('month').value;
-    if(season){
-        param = ",," + season + ",";
-    }else if(month){
-        param = ",,," + month;
-    }
-    console.log("param=[" + param + "]");
-    $.get("/api/v1/nomihodai/", {"search" : param}, function(data) {
-        console.log("result=" + data);
-    })
-}
-</script>
