@@ -3,26 +3,20 @@
     <md-card-title>
         <md-card-title-text>
             <span class="md-title">{{ food.name }}</span>
-            <span class="md-subhead">{{ food.short_desc }}</span>
-            <div layout="row" layout-wrap layout-align="start start">
-                <md-button class="md-primary">
-                    <span class="md-subhead">{{ food.area1_name }}</span>
-                </md-button>
-                <md-button class="md-primary">
-                    <span class="md-subhead">{{ food.area2_name }}</span>
-                </md-button>
+           <span class="md-subhead">{{ food.area1_name | uppercase }}, {{ food.area2_name | uppercase }}</span>
+            <span class="md-caption">{{ food.short_desc }}</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
-        <div layout-align="start start">
-            <md-button ng-click="seasonSelected(food.season)"class="md-raised md-primary">
+        <div layout-align="center center" laytou-wrap style="padding: 0 0 10px 0; margin: 0">
+            <md-button ng-click="seasonSelected(food.season)"class="md-fab md-mini">
                 <span class="md-body-2">{{ food.season }}</span>
             </md-button>
-            <br>
-            <md-button ng-click="monthSelected(month)" class="md-fab md-mini" ng-repeat="month in months">
-                <span class="md-body-2">{{ month }}</span>
+            <md-button ng-click="monthSelected(month)" class="md-fab md-mini md-primary" ng-repeat="month in months">
+                <span class="md-body-2">{{ month }}月</span>
             </md-button>
         </div>
-        <span class="md-body-1">{{ food.long_desc }}</span>
+        <md-divider></md-divider>
+        <div class="md-body-1" style="padding-top: 20px">{{ food.long_desc }}</div>
     </md-card-content>
 </md-card>
