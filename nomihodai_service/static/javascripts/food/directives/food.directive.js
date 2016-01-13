@@ -19,6 +19,12 @@
     * @memberOf nomihodai.food.directives.Food
     */
     var directive = {
+      controller: ['$scope', '$rootScope', function($scope, $rootScope) {
+        $scope.monthSelected = function (month) {
+          $rootScope.month = month;
+          console.log($rootScope)
+        }
+      }],
       restrict: 'E',
       scope: {
         food: '='

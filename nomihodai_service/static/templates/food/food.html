@@ -19,7 +19,7 @@
                 <span class="md-body-2">{{ food.season }}</span>
             </md-button>
             <br>
-            <md-button class="md-fab md-mini" ng-repeat="month in months">
+            <md-button ng-click="monthSelected(month)" class="md-fab md-mini" ng-repeat="month in months">
                 <span class="md-body-2">{{ month }}</span>
             </md-button>
         </div>

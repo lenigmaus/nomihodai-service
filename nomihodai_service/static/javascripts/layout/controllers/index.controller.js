@@ -16,7 +16,6 @@
   */
   function IndexController($scope, Food, $rootScope) {
     var vm = this;
-
     vm.foodlist = [];
 
     activate();
@@ -30,6 +29,7 @@
       //Food.all().then(foodlistSuccessFn, foodlistErrorFn);
       Food.search().then(foodlistSuccessFn, foodlistErrorFn);
       $scope.$watch(function () { return $rootScope.location; }, locationChanged);
+      $scope.$watch(function () { return $rootScope.month; }, monthChanged);
       
       /**
       * @name foodlistSuccessFn
@@ -50,9 +50,13 @@
       }
 
       function locationChanged(current, old) {
-        Food.search(current).then(foodlistSuccessFn, foodlistErrorFn);
+        Food.search(current, "", $rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
+      }
+      function monthChanged(current, old) {
+        Food.search($rootScope.location,"",current).then(foodlistSuccessFn, foodlistErrorFn);
       }
       
     }
+
   }
 })();
