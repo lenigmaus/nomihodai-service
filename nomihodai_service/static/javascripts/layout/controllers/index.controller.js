@@ -28,9 +28,9 @@
     function activate() {
       //Food.all().then(foodlistSuccessFn, foodlistErrorFn);
       Food.search().then(foodlistSuccessFn, foodlistErrorFn);
-      $scope.$watch(function () { return $rootScope.location; }, locationChanged);
-      $scope.$watch(function () { return $rootScope.month; }, monthChanged);
-      $scope.$watch(function () { return $rootScope.season; }, seasonChanged);
+      $scope.$watch(function () { return $rootScope.location; }, scopeChanged);
+      $scope.$watch(function () { return $rootScope.month; }, scopeChanged);
+      $scope.$watch(function () { return $rootScope.season; }, scopeChanged);
       
       /**
       * @name foodlistSuccessFn
@@ -50,15 +50,7 @@
         //TODO
       }
 
-      function locationChanged(current, old) {
-        Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
-      }
-      
-      function monthChanged(current, old) {
-        Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
-      }
-
-      function seasonChanged(current, old) {
+      function scopeChanged(current, old) {
         Food.search($rootScope.location,$rootScope.season,$rootScope.month).then(foodlistSuccessFn, foodlistErrorFn);
       }
       
