@@ -23,7 +23,10 @@
       scope: {
         food: '='
       },
-      templateUrl: '/static/templates/food/food.html'
+      templateUrl: '/static/templates/food/food.html',
+      link: function(scope){
+        scope.months = scope.food.recommended_months.split(",")
+      }
     };
 
     return directive;
