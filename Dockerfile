@@ -27,6 +27,7 @@ RUN npm install -g bower
 ADD ./nomihodai_service /opt/docker/nomihodai_service
 
 RUN cd nomihodai_service && bower install --allow-root
+RUN cd nomihodai_service && python manage.py collectstatic --noinput
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
