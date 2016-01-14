@@ -39,28 +39,28 @@ class Command(BaseCommand):
         wi_image_src = html.xpath('//*[@id="recommend"]/div/div/div[4]/div[2]/div/div/div[2]/div[2]/img/@src')
         wi_image = 'http://tabiiro.jp' + wi_image_src[0]
         sp_monthes = []
-        for i in range(1, 12):
+        for i in range(1, 13):
             path = '//*[@id="recommend"]/div/div/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[' + str(i) + ']/'
             act = html.xpath(path + '@class')
             if 'actmonth' in act:
                 sp_monthes.append(str(i))
         sp_month = ','.join(sp_monthes)
         su_monthes = []
-        for i in range(1, 12):
+        for i in range(1, 13):
             path = '//*[@id="recommend"]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[' + str(i) + ']/'
             act = html.xpath(path + '@class')
             if 'actmonth' in act:
                 su_monthes.append(str(i))
         su_month = ','.join(su_monthes)
         au_monthes = []
-        for i in range(1, 12):
+        for i in range(1, 13):
             path = '//*[@id="recommend"]/div/div/div[3]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[' + str(i) + ']/'
             act = html.xpath(path + '@class')
             if 'actmonth' in act:
                 au_monthes.append(str(i))
         au_month = ','.join(au_monthes)
         wi_monthes = []
-        for i in range(1, 12):
+        for i in range(1, 13):
             path = '//*[@id="recommend"]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[' + str(i) + ']/'
             act = html.xpath(path + '@class')
             if 'actmonth' in act:
