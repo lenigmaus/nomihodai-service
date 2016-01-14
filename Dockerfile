@@ -50,6 +50,7 @@ RUN pip install -r requirements.txt
 RUN npm install -g bower
 ADD ./nomihodai_service /opt/docker/nomihodai_service
 
+# CMD mkdir nomihodai_service/static/bower_components
 RUN cd nomihodai_service && bower install --allow-root
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
