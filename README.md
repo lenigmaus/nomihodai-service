@@ -12,7 +12,6 @@ If you have virtualenv then proceed as follows:
   * ```pip install -r requirements.txt```
   * ```cd nomihodai_service```
   * ```npm install -g bower```
-  * ```npm install```
   * ```bower install```
 
 ## How to start the service
